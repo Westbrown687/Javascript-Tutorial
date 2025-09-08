@@ -35,6 +35,8 @@
   score.losses = 0
   score.ties = 0;
 
+  localStorage.removeItem('score');
+
   alert(`Win: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
   "
     >
@@ -42,14 +44,21 @@
     </button>
 
     <script>
-      const score = {
+      let score = JSON.parse(localStorage.getItem("score")) || {
         wins: 0,
         losses: 0,
         ties: 0,
       };
 
-      console.log(localStorage.getItem("message"));
+      /*if (score === null) {
+        score = {
+          wins: 0,
+          losses: 0,
+          ties: 0,
+        };
+      }*/
 
+      /*console.log(JSON.parse(localStorage.getItem("score")))*/
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
         let result = "";
@@ -88,7 +97,7 @@
           score.ties += 1;
         }
 
-        localStorage.setItem("message", "hello");
+        localStorage.setItem("score", JSON.stringify(score));
 
         alert(
           `You picked ${playerMove}, Computer picked ${computerMove}. ${result}
