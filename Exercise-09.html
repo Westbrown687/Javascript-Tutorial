@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>9a</button>
+    <button class="js-button">9b</button>
+
+    <button onclick="flipGame('Heads')" class="js-head">Heads</button>
+    <button
+      onclick="
+    flipGame('Tails')"
+      class="js-tail"
+    >
+      Tails
+    </button>
+    <p class="js-empty"></p>
+
+    <input
+      onkeydown="keyDown()"
+      class="js-name"
+      type="text"
+      placeholder="Your name"
+    />
+    <button onclick="submit()">Submit</button>
+    <p class="js-empty1"></p>
+
+    <script>
+      function keyDown() {
+        const key = event.key;
+
+        if (key === "Enter") {
+          submit();
+        }
+      }
+
+      function submit() {
+        const buttonName = document.querySelector(".js-name");
+        const result = buttonName.value;
+
+        if (result) {
+          document.querySelector(
+            ".js-empty1"
+          ).innerHTML = `Your name is: ${result}`;
+        }
+      }
+
+      const buttonElement = document.querySelector("button");
+      console.log(buttonElement.innerHTML);
+
+      document.querySelector(".js-button").innerHTML = "9b done";
+
+      function flipGame(choice) {
+        const buttonHead = document.querySelector(".js-head");
+        const buttonTail = document.querySelector(".js-tail");
+
+        if (buttonHead.innerHTML === "Heads") {
+          document.querySelector(
+            ".js-empty"
+          ).innerHTML = `You chose: ${choice}`;
+        } else if (buttonTail.innerHTML === "Tails") {
+          document.querySelector(".js-empty").innerHTML = `You chose ${choice}`;
+        }
+      }
+    </script>
+  </body>
+</html>
