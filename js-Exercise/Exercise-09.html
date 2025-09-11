@@ -20,7 +20,7 @@
     <p class="js-empty"></p>
 
     <input
-      onkeydown="keyDown()"
+      onkeydown="keyDown(event)"
       class="js-name"
       type="text"
       placeholder="Your name"
@@ -29,10 +29,10 @@
     <p class="js-empty1"></p>
 
     <script>
-      function keyDown() {
-        const key = event.key;
-
-        if (key === "Enter") {
+      function keyDown(event) {
+        //const key = event.key;
+        //console.log(event.key);
+        if (event.key === "Enter") {
           submit();
         }
       }
