@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("John Doe");
+      console.log("19");
+      console.log("Student");
+
+      console.log(19 % 3);
+      console.log(10 === 3);
+      console.log(2 < "10");
+      console.log("5" > 2);
+      console.log((false && true) || false);
+
+      const colors = {
+        color1: "red",
+        color2: "green",
+        color3: "blue",
+        color4: "black",
+      };
+      console.log(colors);
+      let area;
+
+      let perimeter;
+      function calculateSquare(side) {
+        area = side * side;
+        console.log(area);
+
+        perimeter = area / 2;
+        console.log(perimeter);
+      }
+
+      calculateSquare(8);
+    </script>
+  </body>
+</html>
