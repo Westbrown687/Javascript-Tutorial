@@ -15,41 +15,27 @@
         font-size: 30px;
         font-weight: bold;
       }
-      .rock-emoji {
+      .moves-emoji {
         height: 50px;
       }
-      .button-rock {
+      .button-moves {
         background-color: transparent;
         border-color: white;
         border-style: solid;
-        border-radius: 50px;
-        padding: 15px 17px;
-        margin-right: 20px;
+        border-radius: 60px;
+        height: 120px;
+        width: 120px;
+        margin-right: 10px;
         border-width: 3px;
+        cursor: pointer;
       }
-      .paper-emoji {
-        height: 50px;
+      .result {
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 50px;
       }
-      .button-paper {
-        background-color: transparent;
-        border-color: white;
-        border-style: solid;
-        border-radius: 50px;
-        padding: 15px 17px;
-        margin-right: 20px;
-        border-width: 3px;
-      }
-      .scissors-emoji {
-        height: 50px;
-      }
-      .button-scissors {
-        background-color: transparent;
-        border-color: white;
-        border-style: solid;
-        border-radius: 50px;
-        padding: 15px 17px;
-        margin-right: 20px;
-        border-width: 3px;
+      .score {
+        margin-top: 60px;
       }
     </style>
   </head>
@@ -59,30 +45,33 @@
       onclick="
     playGame('Rock')
     "
-      class="button-rock"
+      class="button-moves"
     >
-      <img class="rock-emoji" src="Images/rock-emoji.png" />
+      <img class="moves-emoji" src="Images/rock-emoji.png" />
     </button>
 
     <button
       onclick="
     playGame('Paper')"
-      class="button-paper"
+      class="button-moves"
     >
-      <img class="paper-emoji" src="Images/paper-emoji.png" alt="" />
+      <img class="moves-emoji" src="Images/paper-emoji.png" alt="" />
     </button>
 
     <button
       onclick="
       playGame('Scissors')
       "
-      class="button-scissors"
+      class="button-moves"
     >
-      <img class="scissors-emoji" src="Images/scissors-emoji.png" alt="" />
+      <img class="moves-emoji" src="Images/scissors-emoji.png" alt="" />
     </button>
-    <p class="js-result"></p>
+
+    <p class="js-result result">TIE</p>
+
     <p class="js-moves"></p>
-    <p class="js-score"></p>
+
+    <p class="js-score score"></p>
 
     <button
       onclick="
@@ -164,7 +153,8 @@
         document.querySelector(".js-result").innerHTML = `${result}`;
         document.querySelector(
           ".js-moves"
-        ).innerHTML = `You ${playerMove} &#8209; ${computerMove} Computer`;
+        ).innerHTML = ` You <img class="moves-emoji" src="Images/${playerMove}-emoji.png" />
+      <img class="moves-emoji" src="Images/${computerMove}-emoji.png" alt="" /> Computer`;
       }
 
       function updateScoreElement() {
