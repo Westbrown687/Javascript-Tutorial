@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*let array1 = ["hello", "world", "search", "good"];
+      //console.log(array1[2]);
+
+      let index = -1;
+
+      for (let i = 0; i < array1.length; i++) {
+        const result = array1[i];
+
+        if (result === "search") {
+          index = i;
+        }
+      }
+
+      console.log(index);
+
+      words = ["not", "found"];
+      index = -1;
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === "search") {
+          index = i;
+        }
+      }
+
+      console.log(index);
+
+      let array1 = ["hello", "world", "search", "good", "search"];
+
+      let index = -1;
+
+      for (let i = 0; i < array1.length; i++) {
+        const result = array1[i];
+
+        if (result === "search") {
+          index = i;
+
+          break;
+        }
+      }
+
+      console.log(index);*/
+
+      function findIndex(array, word) {
+        let index = -1;
+        for (let i = 0; i < array.length; i++) {
+          const result = array[i];
+
+          if (word === result) {
+            index = i;
+            break;
+          }
+        }
+        return index;
+      }
+      console.log(findIndex(["green", "red", "blue", "red"], "red"));
+      console.log(findIndex(["green", "red", "blue", "red"], "yellow"));
+    </script>
+  </body>
+</html>
