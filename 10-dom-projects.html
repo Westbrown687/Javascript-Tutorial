@@ -82,6 +82,9 @@
         if (cost < 40) {
           cost += 10;
         }
+
+        inputElement.value = "";
+
         document.querySelector(".js-total-cost").innerHTML = `$${cost}`;
       }
 
