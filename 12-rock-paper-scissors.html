@@ -10,26 +10,26 @@
     <p class="title">Rock Paper Scissors</p>
     <button
       onclick="
-    playGame('Rock')
+   // playGame('Rock')
     "
-      class="button-moves"
+      class="button-moves js-rock"
     >
       <img class="moves-emoji" src="Images/rock-emoji.png" />
     </button>
 
     <button
       onclick="
-    playGame('Paper')"
-      class="button-moves"
+   // playGame('Paper')"
+      class="button-moves js-paper"
     >
       <img class="moves-emoji" src="Images/paper-emoji.png" alt="" />
     </button>
 
     <button
       onclick="
-      playGame('Scissors')
+      //playGame('Scissors')
       "
-      class="button-moves"
+      class="button-moves js-scissors"
     >
       <img class="moves-emoji" src="Images/scissors-emoji.png" alt="" />
     </button>
@@ -39,7 +39,7 @@
 
     <button
       onclick="
-  score.wins = 0;
+  /*score.wins = 0;
   score.losses = 0
   score.ties = 0;
 
@@ -48,14 +48,16 @@
   updateScoreElement()
 
 
-  alert(`Win: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)
+  alert(`Win: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`)*/
   "
-      class="reset-score-button"
+      class="reset-score-button reset-score"
     >
       Reset Score
     </button>
 
-    <button class="autoplay-button" onclick="autoPlay()">Auto-Play</button>
+    <button class="autoplay-button js-autoplay" onclick="//autoPlay()">
+      Auto-Play
+    </button>
 
     <script src="scripts/12-rock-paper-scissors.js"></script>
   </body>

@@ -25,10 +25,22 @@ function renderTodoList() {
 
     renderTodoList();
     "
-    class="delete-button">Delete</button>
+    class="delete-button js-deletebutton">Delete</button>
     `;
     todoListHtml += html;
   });
+
+  document.querySelector(".js-todo-list").innerHTML = todoListHtml;
+
+  document
+    .querySelectorAll(".js-deletebutton")
+    .forEach((deletebutton, index) => {
+      deletebutton.addEventListener("click", () => {
+        todoList.splice(index, 1);
+
+        renderTodoList();
+      });
+    });
 
   /* for (let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
@@ -49,9 +61,13 @@ function renderTodoList() {
 
     console.log(html);
   }*/
-
-  document.querySelector(".js-todo-list").innerHTML = todoListHtml;
 }
+
+const addElement = document.querySelector(".js-addbutton");
+
+addElement.addEventListener("click", () => {
+  addTodo();
+});
 
 function addTodo() {
   const inputElement = document.querySelector(".js-name-input");

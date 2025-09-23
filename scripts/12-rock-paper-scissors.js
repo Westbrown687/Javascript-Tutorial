@@ -31,6 +31,51 @@ function autoPlay() {
     isAutoPlaying = false;
   }
 }
+const resetScore = document.querySelector(".reset-score");
+
+resetScore.addEventListener("click", () => {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+
+  localStorage.removeItem("score");
+
+  updateScoreElement();
+
+  alert(`Win: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+});
+
+const replay = document.querySelector(".js-autoplay");
+
+replay.addEventListener("click", () => {
+  autoPlay();
+});
+
+const buttonRock = document.querySelector(".js-rock");
+buttonRock.addEventListener("click", () => {
+  playGame("Rock");
+});
+
+const buttonPaper = document.querySelector(".js-paper");
+buttonPaper.addEventListener("click", () => {
+  playGame("Paper");
+});
+
+const buttonScissors = document.querySelector(".js-scissors");
+
+buttonScissors.addEventListener("click", () => {
+  playGame("Scissors");
+});
+
+document.body.addEventListener("keydown", (event) => {
+  if (event.key === "r") {
+    playGame("Rock");
+  } else if (event.key === "p") {
+    playGame("Paper");
+  } else if (event.key === "s") {
+    playGame("Scissors");
+  }
+});
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
